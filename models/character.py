@@ -3,7 +3,7 @@ import requests
 def get_characters():
     req = requests.get("https://api.potterdb.com/v1/characters")
     if req.status_code == 200:
-        print(req.json())
+        return req.json()
     else:
         raise Exception(f"Failed to fetch characters: {req.status_code}")
     
